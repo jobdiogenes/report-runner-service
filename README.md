@@ -54,6 +54,24 @@ setuid anhalt
 chdir /home/anhalt/minimal-reports/
 exec mvn jetty:run
 ```
+Or *SystemD* script 
+on Debian  create the script at /etc/systemd/system/specifyreport.service
+```
+[Unit]
+Description=Specify Report Service server
+After=network.target
+ConditionPathExists=/home/specify/report-runner-service
+
+[Service]
+Type=simple
+User=specify
+Group=specify
+WorkingDirectory=~
+ExecStart=/bin/sh -ec "exec mvn jetty:run"
+
+[Install]
+Alias=ireport.service
+```
 
 Missing Barcode Text
 ====================
