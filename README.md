@@ -5,7 +5,7 @@ Reports libraries for report and label generation in Specify 7.
 
 ## Requirements
 
-- Java JDK >= 1.7 (never versions work too)
+- Java JDK >= 1.7 (newer versions work too)
 - Apache Maven 2 or 3
 
 ## Test Service
